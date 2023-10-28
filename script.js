@@ -10,6 +10,9 @@ let windDirection;
 let windSpeed;
 let waterTemperature;
 
+var currentDate = new Date();
+var hoursNow = currentDate.getHours();
+
 fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
   headers: {
     'Authorization': '635633a4-7464-11ee-86b2-0242ac130002-63563462-7464-11ee-86b2-0242ac130002'
@@ -19,12 +22,12 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
   hours = jsonData.hours;
 
   // Assigning values to variables
-  waveHeight = hours[0].waveHeight.noaa;
-  waveDirection = hours[0].waveDirection.noaa;
-  wavePeriod = hours[0].wavePeriod.noaa;
-  windDirection = hours[0].windDirection.noaa;
-  windSpeed = hours[0].windSpeed.noaa;
-  waterTemperature = hours[0].waterTemperature.noaa;
+  waveHeight = hours[hoursNow].waveHeight.noaa;
+  waveDirection = hours[hoursNow].waveDirection.noaa;
+  wavePeriod = hours[hoursNow].wavePeriod.noaa;
+  windDirection = hours[hoursNow].windDirection.noaa;
+  windSpeed = hours[hoursNow].windSpeed.noaa;
+  waterTemperature = hours[hoursNow].waterTemperature.noaa;
 
   // Creating h1 elements and appending them to the body
   const waveHeightElement = document.createElement('h1');
