@@ -35,7 +35,7 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
   document.body.appendChild(waveHeightElement);
 
   const waveDirectionElement = document.createElement('h1');
-  waveDirectionElement.textContent = `Wave Direction = ${waveDirection} degrees`;
+  waveDirectionElement.textContent = `Wave Direction = ${waveDirection}`;
   document.body.appendChild(waveDirectionElement);
 
   const wavePeriodElement = document.createElement('h1');
