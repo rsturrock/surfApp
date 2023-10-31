@@ -22,10 +22,10 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
   hours = jsonData.hours;
 
   // Assigning values to variables
-  waveHeight = hours[hoursNow].waveHeight.noaa;
+  waveHeight = hours[hoursNow].waveHeight.icon;
   waveDirection = hours[hoursNow].waveDirection.noaa;
   wavePeriod = hours[hoursNow].wavePeriod.noaa;
-  windDirection = hours[hoursNow].windDirection.noaa;
+  windDirection = hours[hoursNow].windDirection.icon;
   windSpeed = hours[hoursNow].windSpeed.noaa;
   waterTemperature = hours[hoursNow].waterTemperature.noaa;
 
@@ -43,7 +43,52 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
   document.body.appendChild(wavePeriodElement);
 
   const windDirectionElement = document.createElement('h1');
-  windDirectionElement.textContent = `Wind Direction = ${windDirection} degrees`;
+  
+  let windDegree = windDirection; // Example wind degree value
+  let windDirectionLetter;
+
+  if (windDegree >= 0 && windDegree < 11.25 || windDegree >= 348.75 && windDegree <= 360) {
+      windDirectionLetter = "N";
+  } else if (windDegree >= 11.25 && windDegree < 33.75) {
+      windDirectionLetter = "N-NE";
+  } else if (windDegree >= 33.75 && windDegree < 56.25) {
+      windDirectionLetter = "NE";
+  } else if (windDegree >= 56.25 && windDegree < 78.75) {
+      windDirectionLetter = "E-NE";
+  } else if (windDegree >= 78.75 && windDegree < 101.25) {
+      windDirectionLetter = "E";
+  } else if (windDegree >= 101.25 && windDegree < 123.75) {
+      windDirectionLetter = "E-SE";
+  } else if (windDegree >= 123.75 && windDegree < 146.25) {
+      windDirectionLetter = "SE";
+  } else if (windDegree >= 146.25 && windDegree < 168.75) {
+      windDirectionLetter = "S-SE";
+  } else if (windDegree >= 168.75 && windDegree < 191.25) {
+      windDirectionLetter = "S";
+  } else if (windDegree >= 191.25 && windDegree < 213.75) {
+      windDirectionLetter = "S-SW";
+  } else if (windDegree >= 213.75 && windDegree < 236.25) {
+      windDirectionLetter = "SW";
+  } else if (windDegree >= 236.25 && windDegree < 258.75) {
+      windDirectionLetter = "W-SW";
+  } else if (windDegree >= 258.75 && windDegree < 281.25) {
+      windDirectionLetter = "W";
+  } else if (windDegree >= 281.25 && windDegree < 303.75) {
+      windDirectionLetter = "W-NW";
+  } else if (windDegree >= 303.75 && windDegree < 326.25) {
+      windDirectionLetter = "NW";
+  } else if (windDegree >= 326.25 && windDegree < 348.75) {
+      windDirectionLetter = "N-NW";
+  } else {
+      windDirectionLetter = "Invalid Degree"; // Handle invalid input
+  }
+
+  console.log("Wind direction is: " + windDirection);
+
+
+  windDirectionElement.textContent = `Wind Direction = ${windDirectionLetter} degrees`;
+  
+  console.log("Wind direction is: " + windDirection);
   document.body.appendChild(windDirectionElement);
 
   const windSpeedElement = document.createElement('h1');
