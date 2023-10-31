@@ -35,7 +35,7 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
   document.body.appendChild(waveHeightElement);
 
   const waveDirectionElement = document.createElement('h1');
-  waveDirectionElement.textContent = `Wave Direction = ${waveDirection}`;
+  waveDirectionElement.textContent = `Wave Direction = ${waveDirection} degrees`;
   document.body.appendChild(waveDirectionElement);
 
   const wavePeriodElement = document.createElement('h1');
@@ -84,9 +84,7 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
   }
 
   console.log("Wind direction is: " + windDirection);
-
-
-  windDirectionElement.textContent = `Wind Direction = ${windDirectionLetter} degrees`;
+  windDirectionElement.textContent = `Wind Direction = ${windDirectionLetter}`;
   
   console.log("Wind direction is: " + windDirection);
   document.body.appendChild(windDirectionElement);
