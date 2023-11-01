@@ -33,12 +33,12 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
   waterTemperature = hours[hoursNow].waterTemperature.noaa;
 
   // Creating h1 elements and appending them to the body
-  const waveHeightElement = document.createElement('h2');
+  const waveHeightElement = document.createElement('h4');
   waveHeightInFeet = waveHeight * 3.28084;
   waveHeightElement.textContent = `🌊 Wave Height = ${waveHeight} meters / ${waveHeightInFeet.toFixed(1)} feet`;
   surfDataContainer.appendChild(waveHeightElement);
 
-  const waveDirectionElement = document.createElement('h2');
+  const waveDirectionElement = document.createElement('h4');
 
   let waveDegree = waveDirection; // Example wind degree value
   let waveDirectionLetter;
@@ -82,11 +82,11 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
   waveDirectionElement.textContent = `🌊 Wave Direction = ${waveDirectionLetter}`;
   surfDataContainer.appendChild(waveDirectionElement);
 
-  const wavePeriodElement = document.createElement('h2');
+  const wavePeriodElement = document.createElement('h4');
   wavePeriodElement.textContent = `🌊 Wave Period = ${wavePeriod} seconds`;
   surfDataContainer.appendChild(wavePeriodElement);
 
-  const windDirectionElement = document.createElement('h2');
+  const windDirectionElement = document.createElement('h4');
   
   let windDegree = windDirection; // Example wind degree value
   let windDirectionLetter;
@@ -130,12 +130,12 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
   windDirectionElement.textContent = `💨 Wind Direction = ${windDirectionLetter}`;
   surfDataContainer.appendChild(windDirectionElement);
 
-  const windSpeedElement = document.createElement('h2');
+  const windSpeedElement = document.createElement('h4');
   windSpeedKnots = windSpeed * 1.94384;
   windSpeedElement.textContent = `💨 Wind Speed = ${windSpeedKnots.toFixed(1)} knots`;
   surfDataContainer.appendChild(windSpeedElement);
 
-  const waterTemperatureElement = document.createElement('h2');
+  const waterTemperatureElement = document.createElement('h4');
   waterTemperatureElement.textContent = `💧🌡️ Water Temperature = ${waterTemperature} °C`;
   surfDataContainer.appendChild(waterTemperatureElement);
 }).catch((error) => {

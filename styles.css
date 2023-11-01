@@ -1,5 +1,5 @@
 #surfDataContainer {
-    width: 400px;
+
 }
 
 #title {
@@ -10,4 +10,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+p {
+    margin-top: 0;
+}
+
+h2 {
+    margin-bottom: 0;
 }
