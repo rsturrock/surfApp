@@ -79,7 +79,7 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
         waveDirectionLetter = "Invalid Degree"; // Handle invalid input
     }
 
-  waveDirectionElement.textContent = `🌊 Wave Direction = ${waveDirectionLetter}`;
+  waveDirectionElement.textContent = `🌊 Wave Direction = ${waveDirectionLetter} ${waveDegree}°`;
   surfDataContainer.appendChild(waveDirectionElement);
 
   const wavePeriodElement = document.createElement('h4');
@@ -127,7 +127,7 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
       windDirectionLetter = "Invalid Degree"; // Handle invalid input
   }
 
-  windDirectionElement.textContent = `💨 Wind Direction = ${windDirectionLetter}`;
+  windDirectionElement.textContent = `💨 Wind Direction = ${windDirectionLetter} ${windDegree}°`;
   surfDataContainer.appendChild(windDirectionElement);
 
   const windSpeedElement = document.createElement('h4');
