@@ -136,7 +136,8 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
   surfDataContainer.appendChild(windSpeedElement);
 
   const waterTemperatureElement = document.createElement('h4');
-  waterTemperatureElement.textContent = `💧🌡️ Water Temperature = ${waterTemperature} °C`;
+  let waterTemperatureInFahrenheit = (waterTemperature * 9/5) + 32;
+  waterTemperatureElement.textContent = `💧🌡️ Water Temperature = ${waterTemperature.toFixed(1)} °C / ${waterTemperatureInFahrenheit.toFixed(1)} °F`;
   surfDataContainer.appendChild(waterTemperatureElement);
 }).catch((error) => {
   console.error('Error fetching data:', error);
