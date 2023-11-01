@@ -32,7 +32,7 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
   // Creating h1 elements and appending them to the body
   const waveHeightElement = document.createElement('h2');
   waveHeightInFeet = waveHeight * 3.28084;
-  waveHeightElement.textContent = `🌊 📏 Wave Height = ${waveHeight} meters / ${waveHeightInFeet.toFixed(1)} feet`;
+  waveHeightElement.textContent = `🌊 Wave Height = ${waveHeight} meters / ${waveHeightInFeet.toFixed(1)} feet`;
   document.body.appendChild(waveHeightElement);
 
   const waveDirectionElement = document.createElement('h2');
@@ -76,11 +76,11 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
         waveDirectionLetter = "Invalid Degree"; // Handle invalid input
     }
 
-  waveDirectionElement.textContent = `🌊 ↑ Wave Direction = ${waveDirectionLetter}`;
+  waveDirectionElement.textContent = `🌊 Wave Direction = ${waveDirectionLetter}`;
   document.body.appendChild(waveDirectionElement);
 
   const wavePeriodElement = document.createElement('h2');
-  wavePeriodElement.textContent = `🌊 📈 Wave Period = ${wavePeriod} seconds`;
+  wavePeriodElement.textContent = `🌊 Wave Period = ${wavePeriod} seconds`;
   document.body.appendChild(wavePeriodElement);
 
   const windDirectionElement = document.createElement('h2');
@@ -124,12 +124,12 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
       windDirectionLetter = "Invalid Degree"; // Handle invalid input
   }
 
-  windDirectionElement.textContent = `💨 ↑ Wind Direction = ${windDirectionLetter}`;
+  windDirectionElement.textContent = `💨 Wind Direction = ${windDirectionLetter}`;
   document.body.appendChild(windDirectionElement);
 
   const windSpeedElement = document.createElement('h2');
   windSpeedKnots = windSpeed * 1.94384;
-  windSpeedElement.textContent = `💨 ⏱️ Wind Speed = ${windSpeedKnots.toFixed(1)} knots`;
+  windSpeedElement.textContent = `💨 Wind Speed = ${windSpeedKnots.toFixed(1)} knots`;
   document.body.appendChild(windSpeedElement);
 
   const waterTemperatureElement = document.createElement('h2');
