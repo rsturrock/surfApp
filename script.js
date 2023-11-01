@@ -83,7 +83,7 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
   surfDataContainer.appendChild(waveDirectionElement);
 
   const wavePeriodElement = document.createElement('h4');
-  wavePeriodElement.textContent = `🌊 Wave Period = ${wavePeriod} seconds`;
+  wavePeriodElement.textContent = `🌊 Wave Period = ${wavePeriod.toFixed(1)} seconds`;
   surfDataContainer.appendChild(wavePeriodElement);
 
   const windDirectionElement = document.createElement('h4');
