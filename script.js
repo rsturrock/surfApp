@@ -1,5 +1,5 @@
-const lat = -8.679651;
-const lng = 115.064301;
+const lat = -10.499651;
+const lng = 117.064301;
 const params = 'waveHeight,waveDirection,wavePeriod,windDirection,windSpeed,waterTemperature';
 
 let hours;
