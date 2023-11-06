@@ -25,10 +25,10 @@ fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=$
   hours = jsonData.hours;
 
   // Assigning values to variables
-  waveHeight = hours[hoursNow].waveHeight.icon;
+  waveHeight = hours[hoursNow].waveHeight.noaa;
   waveDirection = hours[hoursNow].waveDirection.noaa;
   wavePeriod = hours[hoursNow].wavePeriod.noaa;
-  windDirection = hours[hoursNow].windDirection.icon;
+  windDirection = hours[hoursNow].windDirection.noaa;
   windSpeed = hours[hoursNow].windSpeed.noaa;
   waterTemperature = hours[hoursNow].waterTemperature.noaa;
 
